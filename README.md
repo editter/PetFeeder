@@ -1,6 +1,6 @@
 # PetFeeder
 
-A python class that controls a petfeeder.
+A simple python class that controls a petfeeder.
 Features include:
 * Running on a schedule
 * Running via a button press
