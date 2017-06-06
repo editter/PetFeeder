@@ -1,6 +1,12 @@
-# PetFeeder
+---
+layout: page
+title: Pet Feeder
+permalink: /petfeeder/
+---
 
-A python class that controls a petfeeder.
+<!--# PetFeeder-->
+
+A simple python class that controls a petfeeder.
 Features include:
 * Running on a schedule
 * Running via a button press
