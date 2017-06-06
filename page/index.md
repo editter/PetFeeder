@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Pet Feeder
-permalink: /petfeeder/
+permalink: /
 ---
 
 <!--# PetFeeder-->
