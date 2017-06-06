@@ -48,7 +48,7 @@ permalink:          /:year/:month/:day/:title/
 
 nav:
   - name: "Blog"
-    href: "/blog"
+    href: "/"
   - name: "About"
     href: "/about"
   - name: "Pet Feeder"
@@ -70,6 +70,4 @@ defaults:
       type:         "posts"
     values:
       layout:       "post"
-=======
-theme: jekyll-theme-slate
->>>>>>> ddf0e853e98bfb6161923920d724ab45c64ee0cf
+
