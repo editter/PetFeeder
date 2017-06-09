@@ -46,7 +46,7 @@ class PetFeeder(object):
         self.url = "https://onlineservicehub.azurewebsites.net"
         # self.url = "http://192.168.1.5:8080"
 
-        init_logger(self.config["LOG_FILES"], self.config["LOGGING_ENABLED"])
+        self.init_logger(self.config["LOG_FILES"], self.config["LOGGING_ENABLED"])
 
         self.button = None if self.config["BUTTON"] is None else Button(
             self.config["BUTTON"], hold_time=0)
@@ -97,7 +97,7 @@ class PetFeeder(object):
 
         # create error file handler and set level to error
         handler = logging.FileHandler(
-            os.path.join(output_dir, "error.log"),
+            os.path.join(logs_directory, "error.log"),
             "w",
             encoding=None,
             delay="true")
@@ -107,10 +107,10 @@ class PetFeeder(object):
 
         # create debug file handler and set level to debug
 
-        # handler = logging.FileHandler(os.path.join(output_dir, "all.log"), "w")
+        # handler = logging.FileHandler(os.path.join(logs_directory, "all.log"), "w")
         # 5,242,880 bytes / 5.24288 mb
         handler = RotatingFileHandler(
-            os.path.join(output_dir, "all.log"),
+            os.path.join(logs_directory, "all.log"),
             maxBytes=(1048576 * 5),
             backupCount=7)
         handler.setLevel(logging.DEBUG)
@@ -289,7 +289,7 @@ class PetFeeder(object):
                 self.check_dish(),
                 self.update_server(None, {
                     "FeederImage":
-                    open(self.config["COMPARE_DISH_IMAGE"], "rb")
+                    open(self.path(self.config["COMPARE_DISH_IMAGE"]), "rb")
                 })
         self.logger.info("Sending response to IOT")
         return IoTHubMessageDispositionResult.ACCEPTED
