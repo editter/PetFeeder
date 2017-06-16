@@ -2,7 +2,7 @@
 layout: default
 title: Pet Feeder
 permalink: /
-redirect_from: 
+redirect_to: 
   - /petfeeder/
 
 ---
